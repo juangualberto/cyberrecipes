@@ -1,12 +1,25 @@
 
+Creamos una máquina virtual:
+
+* 30 GB de disco dinámico
+* 8192 MB de RAM
+* 4 hilos de ejecución
+* Habilitar PAE
+* Habilitar VT-x
+* Habilitar paginación anidada
+* En medios añadimos el CD-ROM de Ubuntu Server (ISO)
+
+```bash
 apt update
 apt upgrade
+```
 
-# FUENTE: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+FUENTE: <https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html>
 
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-sudo apt-get install apt-transport-https
-echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+
 
 echo "IMPORTANTE: APUNTA EL PASSWORD QUE ES COMUNICADO A CONTINUACION"
 
@@ -21,6 +34,8 @@ sudo /bin/systemctl enable kibana.service
 
 sudo systemctl start elasticsearch.service
 sudo systemctl start kibana.service
+```
+
 
 Para resetear la contraseña del superusuario elastic hacemos:
 
