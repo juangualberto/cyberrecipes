@@ -11,7 +11,7 @@ echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://arti
 echo "IMPORTANTE: APUNTA EL PASSWORD QUE ES COMUNICADO A CONTINUACION"
 
 sudo apt-get update
-sudo apt-get install elasticsearch
+sudo apt-get install elasticsearch 
 sudo apt-get install kibana
 sudo apt-get install logstash
 

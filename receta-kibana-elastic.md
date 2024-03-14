@@ -49,6 +49,10 @@ Para generar un token para hacer el enrolment de kibana a elastic:
 
 sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
 
+Para obtener el código por el que me pregunta kibana:
+
+sudo /usr/share/kibana/bin/kibana-verification-code
+
 Para conectar vía túnel SSH:
 
 ssh -L 5601:localhost:5601  usuario@192.168.19.XXX
