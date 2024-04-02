@@ -40,19 +40,32 @@ sudo systemctl start elasticsearch.service
 sudo systemctl start kibana.service
 ```
 
+Ahora ya podemos ver elastic en el puerto 9200 y kibana en el 5601. 
 
-Para resetear la contraseña del superusuario elastic hacemos:
-
-sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -a -u elastic
-
-Para generar un token para hacer el enrolment de kibana a elastic:
-
-sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
-
-Para obtener el código por el que me pregunta kibana:
-
-sudo /usr/share/kibana/bin/kibana-verification-code
+El usuario será **elastic** y la contraseña la que se generó.
 
 Para conectar vía túnel SSH:
 
+```bash
 ssh -L 5601:localhost:5601  usuario@192.168.19.XXX
+```
+
+**Para resetear la contraseña del superusuario elastic hacemos:**
+
+```bash
+sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -a -u elastic
+```
+
+
+Para **generar un token para hacer el enrolment de kibana a elastic**:
+
+```bash
+sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+```
+
+Para obtener el código por el que me pregunta kibana:
+
+```bash
+sudo /usr/share/kibana/bin/kibana-verification-code
+```
+

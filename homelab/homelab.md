@@ -84,3 +84,27 @@ La máquina viene con 40 GB, es poco, necesitamos darle otros 30 GB. Pulsamos en
 En Windows, nos vamos al administrador de discos y extendemos la partición hasta el final del disco:
 
 ![Aumentar disco en Windows](extenderDiscoWindows.png)
+
+## Instalación de Ubuntu Server + ELK
+
+Partimos que tenemos instalado Ubuntu Server 22.04.
+
+Nos aseguramos de tener IP estática, fichero /etc/netplan/00-installer-config.yaml
+
+```yaml
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens18:
+      addresses:
+      - 192.168.99.10/24
+      nameservers:
+        addresses:
+        - 192.168.99.199
+        search:
+        - homelab.lan
+      routes:
+      - to: default
+        via: 192.168.99.199
+  version: 2
+``` 
