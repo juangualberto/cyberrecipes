@@ -77,12 +77,12 @@ Ejemplo de configuración del apartado de elastic para que mande los datos a un 
 	template_name = "telegraf"
 	urls = ["https://192.168.99.10:9200?sniff=false"]
 	# timeout = "5s"
-	# username = "elastic"
-	# password = "vQjBpLb53ehgBgcoICW+"
+	username = "elastic"
+	password = "vQjBpLb53ehgBgcoICW+"
 	# health_check_timeout = "1s"	
-	auth_bearer_token = "Vzlld3FJNEIyWFMyUG80US12RGc6aGVPQ2ZqR01Rc1M1cjJiTkZNOEdQQQ=="
+	# auth_bearer_token = "Vzlld3FJNEIyWFMyUG80US12RGc6aGVPQ2ZqR01Rc1M1cjJiTkZNOEdQQQ=="
 	# force_document_id = false
-	# default_pipeline = "logs-pfsense.log-1.19.0"
+	default_pipeline = "logs-pfsense.log-1.19.0"
 
 ```
 
