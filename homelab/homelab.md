@@ -75,7 +75,7 @@ Ejemplo de configuración del apartado de elastic para que mande los datos a un 
 	manage_template = false
 	overwrite_template = true
 	template_name = "telegraf"
-	urls = ["https://192.168.99.10:9200?sniff=false"]
+	urls = ["https://192.168.99.10:9200"]
 	# timeout = "5s"
 	username = "elastic"
 	password = "vQjBpLb53ehgBgcoICW+"
