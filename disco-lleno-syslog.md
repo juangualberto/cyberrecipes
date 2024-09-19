@@ -1,5 +1,13 @@
 # Arreglar disco duro lleno por errores de PCI
 
+Este error suele estar relacionado con gráficas NVidia GTX 560 y 660. 
+
+## Síntomas
+
+
+
+## Solución 1
+
 1. Arrancamos en **modo "recovery"** Ubuntu:
    1. En el GRUB busca **"Opciones avanzadas"**, pulsa intro.
    2. En el siguiente menú busca **"Recovery mode"**.
@@ -13,9 +21,23 @@
    ```bash
     GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci=noaer"
    ```
+   En el caso de 
 4. **Muy importante**: Actualizamos GRUB para que lea este archivo, ejecutando el comando:
     ```bash
       update-grub
     ```
 5. Reiniciamos con **reboot**.
 
+## Solución 2
+
+Exactamente igual que el apartado anterior (solución 1) pero cambiamos el punto 3 por:
+
+```bash
+pcie_aspm=off
+```
+
+o bien, si este tampoco funcionó, por esto:
+
+ ```bash
+pci=nommconf
+```
